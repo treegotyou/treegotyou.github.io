@@ -180,7 +180,7 @@ export default function Portfolio() {
               </div>
             )} */}
 
-            {activeTab === 'work' && (
+            {/* {activeTab === 'work' && (
   <div className="work-content">
     <h2>SELECTED PROJECTS THAT TURNED HEADS</h2>
     <div className="work-grid-wrapper">
@@ -201,7 +201,37 @@ export default function Portfolio() {
       </div>
     </div>
   </div>
+)} */}
+{activeTab === 'work' && (
+  <div className="work-content">
+    <h2>SELECTED PROJECTS THAT TURNED HEADS</h2>
+    <div className="work-grid-wrapper">
+      <div className="work-grid">
+        {workProjects.map((project) => (
+          <a
+            key={project.id}
+            href={project.link || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <motion.div
+              className="work-item"
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="work-preview">
+                <img src={project.image} alt={project.title} />
+              </div>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </motion.div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
 )}
+
 
 
 
